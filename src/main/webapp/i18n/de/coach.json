@@ -1,0 +1,25 @@
+{
+    "assignment2App": {
+        "coach" : {
+            "home": {
+                "title": "Coaches",
+                "createLabel": "Coach erstellen",
+                "createOrEditLabel": "Coach erstellen oder bearbeiten",
+                "search": "Suche nach Coach"
+            },
+            "created": "Coach erstellt mit ID {{ param }}",
+            "updated": "Coach aktualisiert mit ID {{ param }}",
+            "deleted": "Coach gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Coach {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Coach"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "positionTitle": "Position Title",
+            "sport": "Sport"
+        }
+    }
+}

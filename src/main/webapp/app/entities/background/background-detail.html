@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="assignment2App.background.detail.title">Background</span> {{vm.background.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="assignment2App.background.language">Language</span></dt>
+        <dd>
+            <span>{{vm.background.language}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.background.hometown">Hometown</span></dt>
+        <dd>
+            <span>{{vm.background.hometown}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.background.yearsInCurrentPosition">Years In Current Position</span></dt>
+        <dd>
+            <span>{{vm.background.yearsInCurrentPosition}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.background.totalChampionships">Total Championships</span></dt>
+        <dd>
+            <span>{{vm.background.totalChampionships}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.background.coach">Coach</span></dt>
+        <dd>
+            <a ui-sref="coach-detail({id:vm.background.coach.id})">{{vm.background.coach.id}}</a>
+        </dd>
+        <dt><span data-translate="assignment2App.background.player">Player</span></dt>
+        <dd>
+            <a ui-sref="player-detail({id:vm.background.player.id})">{{vm.background.player.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="background-detail.edit({id:vm.background.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

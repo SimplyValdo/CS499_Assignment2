@@ -1,0 +1,28 @@
+{
+    "assignment2App": {
+        "player" : {
+            "home": {
+                "title": "Players",
+                "createLabel": "Create a new Player",
+                "createOrEditLabel": "Create or edit a Player",
+                "search": "Search for Player"
+            },
+            "created": "A new Player is created with identifier {{ param }}",
+            "updated": "A Player is updated with identifier {{ param }}",
+            "deleted": "A Player is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Player {{ id }}?"
+            },
+            "detail": {
+                "title": "Player"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "jerseyNumber": "Jersey Number",
+            "positionTitle": "Position Title",
+            "sport": "Sport",
+            "stats": "Stats",
+            "quote": "Quote"
+        }
+    }
+}

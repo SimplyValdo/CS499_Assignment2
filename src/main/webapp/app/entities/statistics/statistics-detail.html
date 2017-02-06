@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="assignment2App.statistics.detail.title">Statistics</span> {{vm.statistics.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="assignment2App.statistics.wins">Wins</span></dt>
+        <dd>
+            <span>{{vm.statistics.wins}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.statistics.losses">Losses</span></dt>
+        <dd>
+            <span>{{vm.statistics.losses}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.statistics.draws">Draws</span></dt>
+        <dd>
+            <span>{{vm.statistics.draws}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="statistics-detail.edit({id:vm.statistics.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

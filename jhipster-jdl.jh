@@ -1,0 +1,49 @@
+entity Sport {
+	SportName String
+}
+
+entity Coach {
+	firstName String
+    lastName String
+    PositionTitle String
+}
+
+entity Player{
+	firstName String
+    lastName String
+    JerseyNumber Integer
+    PositionTitle String
+}
+
+entity Quote{
+	Phrase String
+}
+
+entity Background{
+Language String
+Hometown String
+YearsInCurrentPosition Integer
+TotalChampionships Integer
+}
+
+entity Statistics{
+	Wins Integer
+    Losses Integer
+    Draws Integer
+}
+
+relationship OneToMany {
+Sport{typeofCoach} to Coach,
+Sport{name} to Player
+
+}
+
+relationship OneToOne{
+Player{stats} to Statistics,
+Player{quote} to Quote,
+Background{coach} to Coach,
+Background{player} to Player
+
+}
+
+

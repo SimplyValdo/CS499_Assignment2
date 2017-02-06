@@ -1,0 +1,68 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPlayerLabel" data-translate="assignment2App.player.home.createOrEditLabel">Create or edit a Player</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.player.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.player.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="assignment2App.player.firstName" for="field_firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                    ng-model="vm.player.firstName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="assignment2App.player.lastName" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                    ng-model="vm.player.lastName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="assignment2App.player.jerseyNumber" for="field_jerseyNumber">Jersey Number</label>
+            <input type="number" class="form-control" name="jerseyNumber" id="field_jerseyNumber"
+                    ng-model="vm.player.jerseyNumber"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="assignment2App.player.positionTitle" for="field_positionTitle">Position Title</label>
+            <input type="text" class="form-control" name="positionTitle" id="field_positionTitle"
+                    ng-model="vm.player.positionTitle"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="assignment2App.player.sport" for="field_sport">Sport</label>
+            <select class="form-control" id="field_sport" name="sport" ng-model="vm.player.sport" ng-options="sport as sport.id for sport in vm.sports track by sport.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="assignment2App.player.stats" for="field_stats">Stats</label>
+            <select class="form-control" id="field_stats" name="stats" ng-model="vm.player.stats" ng-options="statistics as statistics.id for statistics in vm.stats | orderBy:'id' track by statistics.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="assignment2App.player.quote" for="field_quote">Quote</label>
+            <select class="form-control" id="field_quote" name="quote" ng-model="vm.player.quote" ng-options="quote as quote.id for quote in vm.quotes | orderBy:'id' track by quote.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

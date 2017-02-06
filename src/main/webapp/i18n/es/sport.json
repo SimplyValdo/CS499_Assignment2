@@ -1,0 +1,24 @@
+{
+    "assignment2App": {
+        "sport" : {
+            "home": {
+                "title": "Sports",
+                "createLabel": "Crear nuevo Sport",
+                "createOrEditLabel": "Crear o editar Sport",
+                "search": "Search for Sport"
+            },
+            "created": "Un nuevo Sport ha sido creado con el identificador {{ param }}",
+            "updated": "Un Sport ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Sport ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Sport {{ id }}?"
+            },
+            "detail": {
+                "title": "Sport"
+            },
+            "sportName": "Sport Name",
+            "typeofCoach": "Typeof Coach",
+            "name": "Name"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="assignment2App.player.detail.title">Player</span> {{vm.player.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="assignment2App.player.firstName">First Name</span></dt>
+        <dd>
+            <span>{{vm.player.firstName}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.player.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{vm.player.lastName}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.player.jerseyNumber">Jersey Number</span></dt>
+        <dd>
+            <span>{{vm.player.jerseyNumber}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.player.positionTitle">Position Title</span></dt>
+        <dd>
+            <span>{{vm.player.positionTitle}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.player.sport">Sport</span></dt>
+        <dd>
+            <a ui-sref="sport-detail({id:vm.player.sport.id})">{{vm.player.sport.id}}</a>
+        </dd>
+        <dt><span data-translate="assignment2App.player.stats">Stats</span></dt>
+        <dd>
+            <a ui-sref="statistics-detail({id:vm.player.stats.id})">{{vm.player.stats.id}}</a>
+        </dd>
+        <dt><span data-translate="assignment2App.player.quote">Quote</span></dt>
+        <dd>
+            <a ui-sref="quote-detail({id:vm.player.quote.id})">{{vm.player.quote.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="player-detail.edit({id:vm.player.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

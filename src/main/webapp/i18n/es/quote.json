@@ -1,0 +1,22 @@
+{
+    "assignment2App": {
+        "quote" : {
+            "home": {
+                "title": "Quotes",
+                "createLabel": "Crear nuevo Quote",
+                "createOrEditLabel": "Crear o editar Quote",
+                "search": "Search for Quote"
+            },
+            "created": "Un nuevo Quote ha sido creado con el identificador {{ param }}",
+            "updated": "Un Quote ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Quote ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Quote {{ id }}?"
+            },
+            "detail": {
+                "title": "Quote"
+            },
+            "phrase": "Phrase"
+        }
+    }
+}

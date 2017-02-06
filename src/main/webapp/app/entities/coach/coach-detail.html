@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="assignment2App.coach.detail.title">Coach</span> {{vm.coach.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="assignment2App.coach.firstName">First Name</span></dt>
+        <dd>
+            <span>{{vm.coach.firstName}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.coach.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{vm.coach.lastName}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.coach.positionTitle">Position Title</span></dt>
+        <dd>
+            <span>{{vm.coach.positionTitle}}</span>
+        </dd>
+        <dt><span data-translate="assignment2App.coach.sport">Sport</span></dt>
+        <dd>
+            <a ui-sref="sport-detail({id:vm.coach.sport.id})">{{vm.coach.sport.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="coach-detail.edit({id:vm.coach.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

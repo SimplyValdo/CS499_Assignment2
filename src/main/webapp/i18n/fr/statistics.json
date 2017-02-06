@@ -1,0 +1,24 @@
+{
+    "assignment2App": {
+        "statistics" : {
+            "home": {
+                "title": "Statistics",
+                "createLabel": "Créer un nouveau Statistics",
+                "createOrEditLabel": "Créer ou éditer un Statistics",
+                "search": "Recherche pour Statistics"
+            },
+            "created": "Un nouveau Statistics a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Statistics avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Statistics avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Statistics {{ id }} ?"
+            },
+            "detail": {
+                "title": "Statistics"
+            },
+            "wins": "Wins",
+            "losses": "Losses",
+            "draws": "Draws"
+        }
+    }
+}
