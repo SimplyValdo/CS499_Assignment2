@@ -18,7 +18,15 @@
    I want to note that any amount of coaches/players can have the same background information.<br>
    A player can have more data(relationship) on the Statistics and Quote Entities.<br> 
    Statistics holds information about Wins, Losses, and Draws.<br>
-   Quote is just a special phrase that a player lives by everyday.</p><br>
+   Quote is just a special phrase that a player lives by everyday.</p>
+   
+   I have two types of relationships.<br>
+   1. OneToMany<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;Every Sport can have many different coaches and players<br>
+   2. ManyToMany<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;A Background can only be paired once for each entity: Coach & Player <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;A player can only have one Statistics
+   &nbsp;&nbsp;&nbsp;&nbsp;A player can only have one Quote
 
 <b>URL<b/>: http://ec2-54-153-64-127.us-west-1.compute.amazonaws.com:8080 <br>
 
