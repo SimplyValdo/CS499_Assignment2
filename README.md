@@ -15,7 +15,7 @@
 <b>Description</b>:<br>
 <p>The topic I picked was sports. I have an entity that holds all categories of sports.<br>
    Also I have a background information that will relate to the coaches/players of a team.<br>
-   I want to note that any amount of coaches/players can have the background information.<br>
+   I want to note that any amount of coaches/players can have the same background information.<br>
    A player can have more data(relationship) on the Statistics and Quote Entities.<br> 
    Statistics holds information about Wins, Losses, and Draws.<br>
    Quote is just a special phrase that a player lives by everyday.</p><br>
