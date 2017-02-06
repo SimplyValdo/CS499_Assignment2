@@ -20,10 +20,10 @@
    Statistics holds information about Wins, Losses, and Draws.<br>
    Quote is just a special phrase that a player lives by everyday.</p>
    
-   I have two types of relationships.<br>
-   1. OneToMany<br>
+   I have two types of relationships:<br>
+   <b>OneToMany</b><br>
    &nbsp;&nbsp;&nbsp;&nbsp;Every Sport can have many different coaches and players<br>
-   2. ManyToMany<br>
+   <b>ManyToMany</b><br>
    &nbsp;&nbsp;&nbsp;&nbsp;A Background can only be paired once for each entity: Coach & Player <br>
    &nbsp;&nbsp;&nbsp;&nbsp;A player can only have one Statistics<br>
    &nbsp;&nbsp;&nbsp;&nbsp;A player can only have one Quote<br>
