@@ -1,0 +1,15 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "phrase",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170206075209",
+    "entityTableName": "quote",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "typeofCoach",
+            "otherEntityName": "coach",
+            "otherEntityRelationshipName": "sport"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "name",
+            "otherEntityName": "player",
+            "otherEntityRelationshipName": "sport"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "sportName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170206075209",
+    "entityTableName": "sport",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

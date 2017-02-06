@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "wins",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "losses",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "draws",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170206075209",
+    "entityTableName": "statistics",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

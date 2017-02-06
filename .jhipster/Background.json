@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "coach",
+            "otherEntityName": "coach",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "background"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "player",
+            "otherEntityName": "player",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "background"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "language",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hometown",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "yearsInCurrentPosition",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "totalChampionships",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170206075209",
+    "entityTableName": "background",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

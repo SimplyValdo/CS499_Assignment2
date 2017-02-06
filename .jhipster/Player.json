@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "sport",
+            "otherEntityName": "sport",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "stats",
+            "otherEntityName": "statistics",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "player"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "quote",
+            "otherEntityName": "quote",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "player"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jerseyNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "positionTitle",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170206075209",
+    "entityTableName": "player",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

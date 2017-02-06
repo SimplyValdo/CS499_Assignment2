@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "sport",
+            "otherEntityName": "sport",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "positionTitle",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170206075209",
+    "entityTableName": "coach",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
