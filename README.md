@@ -1,7 +1,7 @@
 # CS499_Assignment2
 
 <b>Entities and Relationships:</b><br><br>
-<b>My entities:</b> are Sport, Coach, Player, Quote and Background.<br><br>
+<b>My entities:</b> are Sport, Coach, Player, Quote, Background and Statistics.<br><br>
 <b>My relationships:</b><br>
 &nbsp;&nbsp;&nbsp;&nbsp;OneToMany: <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sport{typeofCoach} to Coach, <br>
