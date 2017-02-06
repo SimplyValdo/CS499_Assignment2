@@ -1,0 +1,27 @@
+{
+    "assignment2App": {
+        "background" : {
+            "home": {
+                "title": "Backgrounds",
+                "createLabel": "Crear nuevo Background",
+                "createOrEditLabel": "Crear o editar Background",
+                "search": "Search for Background"
+            },
+            "created": "Un nuevo Background ha sido creado con el identificador {{ param }}",
+            "updated": "Un Background ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Background ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Background {{ id }}?"
+            },
+            "detail": {
+                "title": "Background"
+            },
+            "language": "Language",
+            "hometown": "Hometown",
+            "yearsInCurrentPosition": "Years In Current Position",
+            "totalChampionships": "Total Championships",
+            "coach": "Coach",
+            "player": "Player"
+        }
+    }
+}

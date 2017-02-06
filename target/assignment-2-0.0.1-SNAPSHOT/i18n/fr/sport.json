@@ -1,0 +1,24 @@
+{
+    "assignment2App": {
+        "sport" : {
+            "home": {
+                "title": "Sports",
+                "createLabel": "Créer un nouveau Sport",
+                "createOrEditLabel": "Créer ou éditer un Sport",
+                "search": "Recherche pour Sport"
+            },
+            "created": "Un nouveau Sport a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Sport avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Sport avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Sport {{ id }} ?"
+            },
+            "detail": {
+                "title": "Sport"
+            },
+            "sportName": "Sport Name",
+            "typeofCoach": "Typeof Coach",
+            "name": "Name"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "assignment2App": {
+        "coach" : {
+            "home": {
+                "title": "Coaches",
+                "createLabel": "Crear nuevo Coach",
+                "createOrEditLabel": "Crear o editar Coach",
+                "search": "Search for Coach"
+            },
+            "created": "Un nuevo Coach ha sido creado con el identificador {{ param }}",
+            "updated": "Un Coach ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Coach ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Coach {{ id }}?"
+            },
+            "detail": {
+                "title": "Coach"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "positionTitle": "Position Title",
+            "sport": "Sport"
+        }
+    }
+}

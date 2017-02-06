@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: Assignment 2
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Valdo
+Implementation-Vendor-Id: com.cs499.assignment2
+Build-Jdk: 1.8.0_111
+Implementation-URL: http://projects.spring.io/spring-boot/assignment-2
+ /
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

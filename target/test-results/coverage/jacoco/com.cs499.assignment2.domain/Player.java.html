@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Player.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment 2</a> &gt; <a href="index.source.html" class="el_package">com.cs499.assignment2.domain</a> &gt; <span class="el_source">Player.java</span></div><h1>Player.java</h1><pre class="source lang-java linenums">package com.cs499.assignment2.domain;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Objects;
+
+/**
+ * A Player.
+ */
+@Entity
+@Table(name = &quot;player&quot;)
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+<span class="fc" id="L16">public class Player implements Serializable {</span>
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = &quot;first_name&quot;)
+    private String firstName;
+
+    @Column(name = &quot;last_name&quot;)
+    private String lastName;
+
+    @Column(name = &quot;jersey_number&quot;)
+    private Integer jerseyNumber;
+
+    @Column(name = &quot;position_title&quot;)
+    private String positionTitle;
+
+    @ManyToOne
+    private Sport sport;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Statistics stats;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Quote quote;
+
+    public Long getId() {
+<span class="fc" id="L48">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="fc" id="L52">        this.id = id;</span>
+<span class="fc" id="L53">    }</span>
+
+    public String getFirstName() {
+<span class="fc" id="L56">        return firstName;</span>
+    }
+
+    public Player firstName(String firstName) {
+<span class="fc" id="L60">        this.firstName = firstName;</span>
+<span class="fc" id="L61">        return this;</span>
+    }
+
+    public void setFirstName(String firstName) {
+<span class="fc" id="L65">        this.firstName = firstName;</span>
+<span class="fc" id="L66">    }</span>
+
+    public String getLastName() {
+<span class="fc" id="L69">        return lastName;</span>
+    }
+
+    public Player lastName(String lastName) {
+<span class="fc" id="L73">        this.lastName = lastName;</span>
+<span class="fc" id="L74">        return this;</span>
+    }
+
+    public void setLastName(String lastName) {
+<span class="fc" id="L78">        this.lastName = lastName;</span>
+<span class="fc" id="L79">    }</span>
+
+    public Integer getJerseyNumber() {
+<span class="fc" id="L82">        return jerseyNumber;</span>
+    }
+
+    public Player jerseyNumber(Integer jerseyNumber) {
+<span class="fc" id="L86">        this.jerseyNumber = jerseyNumber;</span>
+<span class="fc" id="L87">        return this;</span>
+    }
+
+    public void setJerseyNumber(Integer jerseyNumber) {
+<span class="fc" id="L91">        this.jerseyNumber = jerseyNumber;</span>
+<span class="fc" id="L92">    }</span>
+
+    public String getPositionTitle() {
+<span class="fc" id="L95">        return positionTitle;</span>
+    }
+
+    public Player positionTitle(String positionTitle) {
+<span class="fc" id="L99">        this.positionTitle = positionTitle;</span>
+<span class="fc" id="L100">        return this;</span>
+    }
+
+    public void setPositionTitle(String positionTitle) {
+<span class="fc" id="L104">        this.positionTitle = positionTitle;</span>
+<span class="fc" id="L105">    }</span>
+
+    public Sport getSport() {
+<span class="fc" id="L108">        return sport;</span>
+    }
+
+    public Player sport(Sport sport) {
+<span class="nc" id="L112">        this.sport = sport;</span>
+<span class="nc" id="L113">        return this;</span>
+    }
+
+    public void setSport(Sport sport) {
+<span class="nc" id="L117">        this.sport = sport;</span>
+<span class="nc" id="L118">    }</span>
+
+    public Statistics getStats() {
+<span class="fc" id="L121">        return stats;</span>
+    }
+
+    public Player stats(Statistics statistics) {
+<span class="nc" id="L125">        this.stats = statistics;</span>
+<span class="nc" id="L126">        return this;</span>
+    }
+
+    public void setStats(Statistics statistics) {
+<span class="nc" id="L130">        this.stats = statistics;</span>
+<span class="nc" id="L131">    }</span>
+
+    public Quote getQuote() {
+<span class="fc" id="L134">        return quote;</span>
+    }
+
+    public Player quote(Quote quote) {
+<span class="nc" id="L138">        this.quote = quote;</span>
+<span class="nc" id="L139">        return this;</span>
+    }
+
+    public void setQuote(Quote quote) {
+<span class="nc" id="L143">        this.quote = quote;</span>
+<span class="nc" id="L144">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="fc bfc" id="L148" title="All 2 branches covered.">        if (this == o) {</span>
+<span class="fc" id="L149">            return true;</span>
+        }
+<span class="pc bpc" id="L151" title="1 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L152">            return false;</span>
+        }
+<span class="fc" id="L154">        Player player = (Player) o;</span>
+<span class="pc bpc" id="L155" title="3 of 4 branches missed.">        if (player.id == null || id == null) {</span>
+<span class="fc" id="L156">            return false;</span>
+        }
+<span class="nc" id="L158">        return Objects.equals(id, player.id);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L163">        return Objects.hashCode(id);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L168">        return &quot;Player{&quot; +</span>
+            &quot;id=&quot; + id +
+            &quot;, firstName='&quot; + firstName + &quot;'&quot; +
+            &quot;, lastName='&quot; + lastName + &quot;'&quot; +
+            &quot;, jerseyNumber='&quot; + jerseyNumber + &quot;'&quot; +
+            &quot;, positionTitle='&quot; + positionTitle + &quot;'&quot; +
+            '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

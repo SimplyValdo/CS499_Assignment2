@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PlayerResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment 2</a> &gt; <a href="index.source.html" class="el_package">com.cs499.assignment2.web.rest</a> &gt; <span class="el_source">PlayerResource.java</span></div><h1>PlayerResource.java</h1><pre class="source lang-java linenums">package com.cs499.assignment2.web.rest;
+
+import com.codahale.metrics.annotation.Timed;
+import com.cs499.assignment2.domain.Player;
+
+import com.cs499.assignment2.repository.PlayerRepository;
+import com.cs499.assignment2.web.rest.util.HeaderUtil;
+import io.github.jhipster.web.util.ResponseUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * REST controller for managing Player.
+ */
+@RestController
+@RequestMapping(&quot;/api&quot;)
+public class PlayerResource {
+
+<span class="fc" id="L26">    private final Logger log = LoggerFactory.getLogger(PlayerResource.class);</span>
+
+    private static final String ENTITY_NAME = &quot;player&quot;;
+        
+    private final PlayerRepository playerRepository;
+
+<span class="fc" id="L32">    public PlayerResource(PlayerRepository playerRepository) {</span>
+<span class="fc" id="L33">        this.playerRepository = playerRepository;</span>
+<span class="fc" id="L34">    }</span>
+
+    /**
+     * POST  /players : Create a new player.
+     *
+     * @param player the player to create
+     * @return the ResponseEntity with status 201 (Created) and with body the new player, or with status 400 (Bad Request) if the player has already an ID
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PostMapping(&quot;/players&quot;)
+    @Timed
+    public ResponseEntity&lt;Player&gt; createPlayer(@RequestBody Player player) throws URISyntaxException {
+<span class="fc" id="L46">        log.debug(&quot;REST request to save Player : {}&quot;, player);</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (player.getId() != null) {</span>
+<span class="fc" id="L48">            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, &quot;idexists&quot;, &quot;A new player cannot already have an ID&quot;)).body(null);</span>
+        }
+<span class="fc" id="L50">        Player result = playerRepository.save(player);</span>
+<span class="fc" id="L51">        return ResponseEntity.created(new URI(&quot;/api/players/&quot; + result.getId()))</span>
+<span class="fc" id="L52">            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))</span>
+<span class="fc" id="L53">            .body(result);</span>
+    }
+
+    /**
+     * PUT  /players : Updates an existing player.
+     *
+     * @param player the player to update
+     * @return the ResponseEntity with status 200 (OK) and with body the updated player,
+     * or with status 400 (Bad Request) if the player is not valid,
+     * or with status 500 (Internal Server Error) if the player couldnt be updated
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PutMapping(&quot;/players&quot;)
+    @Timed
+    public ResponseEntity&lt;Player&gt; updatePlayer(@RequestBody Player player) throws URISyntaxException {
+<span class="fc" id="L68">        log.debug(&quot;REST request to update Player : {}&quot;, player);</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (player.getId() == null) {</span>
+<span class="fc" id="L70">            return createPlayer(player);</span>
+        }
+<span class="fc" id="L72">        Player result = playerRepository.save(player);</span>
+<span class="fc" id="L73">        return ResponseEntity.ok()</span>
+<span class="fc" id="L74">            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, player.getId().toString()))</span>
+<span class="fc" id="L75">            .body(result);</span>
+    }
+
+    /**
+     * GET  /players : get all the players.
+     *
+     * @return the ResponseEntity with status 200 (OK) and the list of players in body
+     */
+    @GetMapping(&quot;/players&quot;)
+    @Timed
+    public List&lt;Player&gt; getAllPlayers() {
+<span class="fc" id="L86">        log.debug(&quot;REST request to get all Players&quot;);</span>
+<span class="fc" id="L87">        List&lt;Player&gt; players = playerRepository.findAll();</span>
+<span class="fc" id="L88">        return players;</span>
+    }
+
+    /**
+     * GET  /players/:id : get the &quot;id&quot; player.
+     *
+     * @param id the id of the player to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the player, or with status 404 (Not Found)
+     */
+    @GetMapping(&quot;/players/{id}&quot;)
+    @Timed
+    public ResponseEntity&lt;Player&gt; getPlayer(@PathVariable Long id) {
+<span class="fc" id="L100">        log.debug(&quot;REST request to get Player : {}&quot;, id);</span>
+<span class="fc" id="L101">        Player player = playerRepository.findOne(id);</span>
+<span class="fc" id="L102">        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(player));</span>
+    }
+
+    /**
+     * DELETE  /players/:id : delete the &quot;id&quot; player.
+     *
+     * @param id the id of the player to delete
+     * @return the ResponseEntity with status 200 (OK)
+     */
+    @DeleteMapping(&quot;/players/{id}&quot;)
+    @Timed
+    public ResponseEntity&lt;Void&gt; deletePlayer(@PathVariable Long id) {
+<span class="fc" id="L114">        log.debug(&quot;REST request to delete Player : {}&quot;, id);</span>
+<span class="fc" id="L115">        playerRepository.delete(id);</span>
+<span class="fc" id="L116">        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

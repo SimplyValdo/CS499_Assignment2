@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BackgroundResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment 2</a> &gt; <a href="index.source.html" class="el_package">com.cs499.assignment2.web.rest</a> &gt; <span class="el_source">BackgroundResource.java</span></div><h1>BackgroundResource.java</h1><pre class="source lang-java linenums">package com.cs499.assignment2.web.rest;
+
+import com.codahale.metrics.annotation.Timed;
+import com.cs499.assignment2.domain.Background;
+
+import com.cs499.assignment2.repository.BackgroundRepository;
+import com.cs499.assignment2.web.rest.util.HeaderUtil;
+import io.github.jhipster.web.util.ResponseUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * REST controller for managing Background.
+ */
+@RestController
+@RequestMapping(&quot;/api&quot;)
+public class BackgroundResource {
+
+<span class="fc" id="L26">    private final Logger log = LoggerFactory.getLogger(BackgroundResource.class);</span>
+
+    private static final String ENTITY_NAME = &quot;background&quot;;
+        
+    private final BackgroundRepository backgroundRepository;
+
+<span class="fc" id="L32">    public BackgroundResource(BackgroundRepository backgroundRepository) {</span>
+<span class="fc" id="L33">        this.backgroundRepository = backgroundRepository;</span>
+<span class="fc" id="L34">    }</span>
+
+    /**
+     * POST  /backgrounds : Create a new background.
+     *
+     * @param background the background to create
+     * @return the ResponseEntity with status 201 (Created) and with body the new background, or with status 400 (Bad Request) if the background has already an ID
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PostMapping(&quot;/backgrounds&quot;)
+    @Timed
+    public ResponseEntity&lt;Background&gt; createBackground(@RequestBody Background background) throws URISyntaxException {
+<span class="fc" id="L46">        log.debug(&quot;REST request to save Background : {}&quot;, background);</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (background.getId() != null) {</span>
+<span class="fc" id="L48">            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, &quot;idexists&quot;, &quot;A new background cannot already have an ID&quot;)).body(null);</span>
+        }
+<span class="fc" id="L50">        Background result = backgroundRepository.save(background);</span>
+<span class="fc" id="L51">        return ResponseEntity.created(new URI(&quot;/api/backgrounds/&quot; + result.getId()))</span>
+<span class="fc" id="L52">            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))</span>
+<span class="fc" id="L53">            .body(result);</span>
+    }
+
+    /**
+     * PUT  /backgrounds : Updates an existing background.
+     *
+     * @param background the background to update
+     * @return the ResponseEntity with status 200 (OK) and with body the updated background,
+     * or with status 400 (Bad Request) if the background is not valid,
+     * or with status 500 (Internal Server Error) if the background couldnt be updated
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PutMapping(&quot;/backgrounds&quot;)
+    @Timed
+    public ResponseEntity&lt;Background&gt; updateBackground(@RequestBody Background background) throws URISyntaxException {
+<span class="fc" id="L68">        log.debug(&quot;REST request to update Background : {}&quot;, background);</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (background.getId() == null) {</span>
+<span class="fc" id="L70">            return createBackground(background);</span>
+        }
+<span class="fc" id="L72">        Background result = backgroundRepository.save(background);</span>
+<span class="fc" id="L73">        return ResponseEntity.ok()</span>
+<span class="fc" id="L74">            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, background.getId().toString()))</span>
+<span class="fc" id="L75">            .body(result);</span>
+    }
+
+    /**
+     * GET  /backgrounds : get all the backgrounds.
+     *
+     * @return the ResponseEntity with status 200 (OK) and the list of backgrounds in body
+     */
+    @GetMapping(&quot;/backgrounds&quot;)
+    @Timed
+    public List&lt;Background&gt; getAllBackgrounds() {
+<span class="fc" id="L86">        log.debug(&quot;REST request to get all Backgrounds&quot;);</span>
+<span class="fc" id="L87">        List&lt;Background&gt; backgrounds = backgroundRepository.findAll();</span>
+<span class="fc" id="L88">        return backgrounds;</span>
+    }
+
+    /**
+     * GET  /backgrounds/:id : get the &quot;id&quot; background.
+     *
+     * @param id the id of the background to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the background, or with status 404 (Not Found)
+     */
+    @GetMapping(&quot;/backgrounds/{id}&quot;)
+    @Timed
+    public ResponseEntity&lt;Background&gt; getBackground(@PathVariable Long id) {
+<span class="fc" id="L100">        log.debug(&quot;REST request to get Background : {}&quot;, id);</span>
+<span class="fc" id="L101">        Background background = backgroundRepository.findOne(id);</span>
+<span class="fc" id="L102">        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(background));</span>
+    }
+
+    /**
+     * DELETE  /backgrounds/:id : delete the &quot;id&quot; background.
+     *
+     * @param id the id of the background to delete
+     * @return the ResponseEntity with status 200 (OK)
+     */
+    @DeleteMapping(&quot;/backgrounds/{id}&quot;)
+    @Timed
+    public ResponseEntity&lt;Void&gt; deleteBackground(@PathVariable Long id) {
+<span class="fc" id="L114">        log.debug(&quot;REST request to delete Background : {}&quot;, id);</span>
+<span class="fc" id="L115">        backgroundRepository.delete(id);</span>
+<span class="fc" id="L116">        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

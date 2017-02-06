@@ -1,0 +1,24 @@
+{
+    "assignment2App": {
+        "statistics" : {
+            "home": {
+                "title": "Statistics",
+                "createLabel": "Statistics erstellen",
+                "createOrEditLabel": "Statistics erstellen oder bearbeiten",
+                "search": "Suche nach Statistics"
+            },
+            "created": "Statistics erstellt mit ID {{ param }}",
+            "updated": "Statistics aktualisiert mit ID {{ param }}",
+            "deleted": "Statistics gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Statistics {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Statistics"
+            },
+            "wins": "Wins",
+            "losses": "Losses",
+            "draws": "Draws"
+        }
+    }
+}

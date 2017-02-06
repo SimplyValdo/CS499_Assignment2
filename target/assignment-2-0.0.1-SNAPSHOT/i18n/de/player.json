@@ -1,0 +1,28 @@
+{
+    "assignment2App": {
+        "player" : {
+            "home": {
+                "title": "Players",
+                "createLabel": "Player erstellen",
+                "createOrEditLabel": "Player erstellen oder bearbeiten",
+                "search": "Suche nach Player"
+            },
+            "created": "Player erstellt mit ID {{ param }}",
+            "updated": "Player aktualisiert mit ID {{ param }}",
+            "deleted": "Player gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Player {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Player"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "jerseyNumber": "Jersey Number",
+            "positionTitle": "Position Title",
+            "sport": "Sport",
+            "stats": "Stats",
+            "quote": "Quote"
+        }
+    }
+}

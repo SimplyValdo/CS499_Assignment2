@@ -1,0 +1,25 @@
+{
+    "assignment2App": {
+        "coach" : {
+            "home": {
+                "title": "Coaches",
+                "createLabel": "Create a new Coach",
+                "createOrEditLabel": "Create or edit a Coach",
+                "search": "Search for Coach"
+            },
+            "created": "A new Coach is created with identifier {{ param }}",
+            "updated": "A Coach is updated with identifier {{ param }}",
+            "deleted": "A Coach is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Coach {{ id }}?"
+            },
+            "detail": {
+                "title": "Coach"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "positionTitle": "Position Title",
+            "sport": "Sport"
+        }
+    }
+}
