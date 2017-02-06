@@ -25,8 +25,8 @@
    &nbsp;&nbsp;&nbsp;&nbsp;Every Sport can have many different coaches and players<br>
    2. ManyToMany<br>
    &nbsp;&nbsp;&nbsp;&nbsp;A Background can only be paired once for each entity: Coach & Player <br>
-   &nbsp;&nbsp;&nbsp;&nbsp;A player can only have one Statistics
-   &nbsp;&nbsp;&nbsp;&nbsp;A player can only have one Quote
+   &nbsp;&nbsp;&nbsp;&nbsp;A player can only have one Statistics<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;A player can only have one Quote<br>
 
 <b>URL<b/>: http://ec2-54-153-64-127.us-west-1.compute.amazonaws.com:8080 <br>
 
