@@ -13,7 +13,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Background{player} to Player <br>
 
 <b>Description</b>:<br>
-<p>Talk about it here</p>
+<p>The topic I picked was sports. I have an entity that holds all categories of sports.<br>
+   Also I have a background information that will relate to the coaches/players of a team.<br>
+   I want to note that any amount of coaches/players can have the background information.<br>
+   A player can have more data(relationship) on the Statistics and Quote Entities.<br> 
+   Statistics holds information about Wins, Losses, and Draws.<br>
+   Quote is just a special phrase that a player lives by everyday.</p><br>
 
 <b>URL<b/>: http://ec2-54-153-64-127.us-west-1.compute.amazonaws.com:8080 <br>
 
